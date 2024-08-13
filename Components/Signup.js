@@ -20,20 +20,31 @@ const tiktok = require('../assets/tiktok.png');
 // instagram: must_ait6
 // email : mustapha.aitigunaoun@gmail.com
 
-export default function UserRegistration() {
+export default UserRegistration = () => {
   const [click, setClick] = useState(false);
-  const {firstname, setFirstname} = useState('');
-  const {lastname, setLastname} = useState('');
-  const {email, setEmail} = useState('');
-  const {username, setUsername} = useState('');
-  const {password, setPassword} = useState('');
-  const {confirmPassword, setConfirmPassword} = useState('');
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const handleSubmit = () => {
+    alert(firstname);
+    console.log(lastname);
+    console.log(lastname);
+    console.log(email);
+    console.log(username);
+    console.log(password);
+    console.log(confirmPassword);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <Image source={logo} style={styles.image} resizeMode="contain" />
-      <Text style={styles.title}>Login</Text>
+      <Text style={styles.title}>SignUp</Text>
       <View style={styles.inputView}>
-      <TextInput
+        <TextInput
           style={styles.input}
           placeholder="FIRST NAME"
           value={firstname}
@@ -64,6 +75,7 @@ export default function UserRegistration() {
           onChangeText={setEmail}
           autoCorrect={false}
           autoCapitalize="none"
+          keyboardType="email-address"
         />
         <TextInput
           style={styles.input}
@@ -71,6 +83,15 @@ export default function UserRegistration() {
           secureTextEntry
           value={password}
           onChangeText={setPassword}
+          autoCorrect={false}
+          autoCapitalize="none"
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="CONFIRM PASSWORD"
+          secureTextEntry
+          value={confirmPassword}
+          onChangeText={setConfirmPassword}
           autoCorrect={false}
           autoCapitalize="none"
         />
@@ -94,11 +115,12 @@ export default function UserRegistration() {
       <View style={styles.buttonView}>
         <Pressable
           style={styles.button}
-          onPress={() =>
-            Alert.alert(
-              'Login Successfuly!',
-              'see you in my instagram if you have questions : must_ait6',
-            )
+          onPress={
+            handleSubmit
+            // Alert.alert(
+            //   'Login Successfuly!',
+            //   'see you in my instagram if you have questions : must_ait6',
+            // )
           }>
           <Text style={styles.buttonText}>LOGIN</Text>
         </Pressable>
@@ -116,7 +138,7 @@ export default function UserRegistration() {
       </Text>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {

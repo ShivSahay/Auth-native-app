@@ -3,6 +3,7 @@
  * https://github.com/facebook/react-native
  *
  * @format
+ * @developer Shiv Sahay Pandey
  */
 
 import React from 'react';
@@ -24,7 +25,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import  UserLogin  from './Components/Signup';
+import UserLogin from './Components/Signup';
 
 type SectionProps = PropsWithChildren<{
   title: string;
